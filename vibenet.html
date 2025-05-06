@@ -13,4 +13,12 @@
 			<button type="submit">Send</button>
 		</form>
 		</div>
+         <script>
+		 const chatWindow=document.getElementByld("chat-window");
+		 const chatForm=document.getElementByld("chat-form");
+		 const messageInput=document.getElementByld("message-input");
 
+		 function addMessage(text,sender){
+			 const message = document.createElement("div");
+			 message.className=chat-bubble${sender};
+			  
