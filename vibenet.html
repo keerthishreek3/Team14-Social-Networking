@@ -13,4 +13,22 @@
 			<button type="submit">Send</button>
 		</form>
 		</div>
+         <script>
+		 constWindow=document.getElementByld("chat-window");
+		 const chatForm=document.getElementByld("chat-form");
+		 const messageInput=document.getElementByld("message-input");
+		 function addMessage(text,sender){
+			 const message=document.createElement("div");
+			 message.className=chat-bubble${sender};
+			 message.innerHTML=<div>${text}</div>
+	                 <div class="timestamp>${new date().toLocaleTimeString()}</div>;
+			 chatWindow.appendChild(message);
+			 chatWindow.scrollTop=chatWindow.scrollHeight;
+		 }
+		 chatForm.addEventListener("submit",function(e)
+			 {
+				 e.preventDefault();
+				 const msg=messageInput.value;
+				 if(!msg)return;
+				 addMessage(msg,"sent");
 
