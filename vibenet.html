@@ -1,16 +1,45 @@
-<html>
-	<head>
-		<meta charset="UFFF-8">
-		<title>Chat App</title>
-		<link rel="stylesheet"href="style.css">
-	</head>
-        <body>
-		<div class="chat-container">
-		<div id="chat window"
-		     class="chat window"></div>
-		<form id="chat-form">
-			<input id="message-input"type="text" placeholder="Type a message..." required/>
-			<button type="submit">Send</button>
-		</form>
-		</div>
+messageInput.value = '';
+  }
+
+  function createMessageBubble(text, type) {
+    const msg = document.createElement('div');
+    msg.classList.add('message', type);
+
+    const msgText = document.createElement('div');
+    msgText.textContent = text;
+
+    const timestamp = document.createElement('div');
+    timestamp.classList.add('timestamp');
+    timestamp.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    msg.appendChild(msgText);
+    msg.appendChild(timestamp);
+    return msg;
+  }
+
+  messageInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      sendMessage();
+    }
+  });
+  // Optional: preload some messages
+  window.onload = () => {
+    const preload = [
+      { text: "Hello!", type: "received" },
+      { text: "Hi, how are you?", type: "sent" },
+      { text: "I'm doing well, thanks!", type: "received" }
+    ];
+
+    preload.forEach(msg => {
+      const elem = createMessageBubble(msg.text, msg.type);
+      chatMessages.appendChild(elem);
+    });
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  };
+</script>
+
+</body>
+</html>
+
 
