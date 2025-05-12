@@ -1,2 +1,45 @@
+<div class="chat-container">
+  <div class="chat-header">Chat Room</div>
+  <div class="chat-messages" id="chatMessages">
+    <!-- Messages will be inserted here -->
+  </div>
+  <div class="chat-input">
+    <input 
+    type="text" id="messageInput" placeholder="Type a message..." />
+    <button
+	    onclick="sendMessage()">
+	    Send</button>
+  </div>
+</div>
+
+<script>
+  const 
+  chatMessages = document.getElementById
+  ('chatMessages');
+  const 
+  messageInput = document.getElementById
+  ('messageInput');
+
+  function sendMessage() {
+    const
+	  text = messageInput.value.trim();
+    if (!text) return;
+
+    const 
+	  messageElem = createMessageBubble
+	  (text, 'sent');
+    chatMessages.appendChild
+	  (messageElem);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Simulate receiving a reply
+    setTimeout(() => {
+      const
+	    replyElem = createMessageBubble
+	    ('Auto-reply: ' + text, 'received');
+      chatMessages.appendChild(replyElem);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    }, 1000);
 
 
