@@ -1,3 +1,4 @@
+ HEAD
 <html>
 	<html lang="en">
 		<head>
@@ -36,5 +37,67 @@ body{
 	flex-direction:column;
 	gap:10px;
 }
+ first
 
+			   .message {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      position: relative;
+      word-wrap: break-word;
+    }
 
+    .message.sent {
+      align-self: flex-end;
+      background-color: #dcf8c6;
+    }
+
+    .message.received {
+      align-self: flex-start;
+      background-color: #f1f0f0;
+    }
+
+    .timestamp {
+      font-size: 0.75em;
+      color: gray;
+      margin-top: 5px;
+      text-align: right;
+    }
+ .chat-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background-color: #0056b3;
+    }
+@media (max-width: 600px) {
+      .chat-container {
+        width: 100%;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+			 
